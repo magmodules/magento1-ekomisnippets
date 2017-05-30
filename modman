@@ -1,0 +1,8 @@
+app/code/local/Magmodules/Ekomisnippets            app/code/local/Magmodules/Ekomisnippets
+app/etc/modules/Magmodules_Ekomisnippets.xml            app/etc/modules/Magmodules_Ekomisnippets.xml
+app/locale/en_US/Magmodules_Ekomisnippets.csv            app/locale/en_US/Magmodules_Ekomisnippets.csv
+app/locale/it_IT/Magmodules_Ekomisnippets.csv            app/locale/it_IT/Magmodules_Ekomisnippets.csv
+app/locale/nl_NL/Magmodules_Ekomisnippets.csv            app/locale/nl_NL/Magmodules_Ekomisnippets.csv
+app/design/frontend/base/default/layout/magmodules_ekomisnippets.xml            app/design/frontend/base/default/layout/magmodules_ekomisnippets.xml
+app/design/frontend/base/default/template/magmodules/ekomisnippets          app/design/frontend/base/default/template/magmodules/ekomisnippets
+skin/frontend/base/default/magmodules/ekomisnippets      skin/frontend/base/default/magmodules/ekomisnippets

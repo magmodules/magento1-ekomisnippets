@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+  ~ Magmodules.eu - http://www.magmodules.eu
+  ~
+  ~ NOTICE OF LICENSE
+  ~ This source file is subject to the Open Software License (OSL 3.0)
+  ~ that is bundled with this package in the file LICENSE.txt.
+  ~ It is also available through the world-wide-web at this URL:
+  ~ http://opensource.org/licenses/osl-3.0.php
+  ~ If you did not receive a copy of the license and are unable to
+  ~ obtain it through the world-wide-web, please send an email
+  ~ to info@magmodules.eu so we can send you a copy immediately.
+  ~
+  ~ @category      Magmodules
+  ~ @package       Magmodules_Ekomisnippets
+  ~ @author        Magmodules <info@magmodules.eu>
+  ~ @copyright     Copyright (c) 2017 (http://www.magmodules.eu)
+  ~ @license       http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+  -->
+<config>
+    <modules>
+        <Magmodules_Ekomisnippets>
+            <version>1.1.1</version>
+        </Magmodules_Ekomisnippets>
+    </modules>
+    <global>
+        <helpers>
+            <ekomisnippets>
+                <class>Magmodules_Ekomisnippets_Helper</class>
+            </ekomisnippets>
+        </helpers>
+        <blocks>
+            <ekomisnippets>
+                <class>Magmodules_Ekomisnippets_Block</class>
+            </ekomisnippets>
+        </blocks>
+        <models>
+            <ekomisnippets>
+                <class>Magmodules_Ekomisnippets_Model</class>
+            </ekomisnippets>
+        </models>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <magmodules_ekomisnippets>
+                    <file>magmodules_ekomisnippets.xml</file>
+                </magmodules_ekomisnippets>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <magmodules_ekomisnippets>
+                    <files>
+                        <default>Magmodules_Ekomisnippets.csv</default>
+                    </files>
+                </magmodules_ekomisnippets>
+            </modules>
+        </translate>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <magmodules_ekomisnippets>
+                    <files>
+                        <default>Magmodules_Ekomisnippets.csv</default>
+                    </files>
+                </magmodules_ekomisnippets>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <ekomi_snippets>
+            <general>
+                <enabled>0</enabled>
+            </general>
+        </ekomi_snippets>
+    </default>
+</config>
