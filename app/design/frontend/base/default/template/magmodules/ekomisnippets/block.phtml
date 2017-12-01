@@ -18,19 +18,19 @@
  * @license       http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 ?>
-<?php if($_snippets = $this->getSnapshopRequest()) { ?>
-	<div class="ekomi-shop-snippets">
-		<?php echo $this->getEkomiStars($_snippets['fb_avg']); ?>
-		<div class="ekomi-schema" itemscope="itemscope" itemtype="http://schema.org/WebPage">
-			<div itemprop="aggregateRating" itemscope="itemscope" itemtype="http://schema.org/AggregateRating">
-				<meta itemprop="bestRating" content="5">
-				<p><?php echo Mage::helper('ekomisnippets')->__('Rating') ?>
+<?php if ($_snippets = $this->getSnapshopRequest()) { ?>
+    <div class="ekomi-shop-snippets">
+        <?php echo $this->getEkomiStars($_snippets['fb_avg']); ?>
+        <div class="ekomi-schema" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+            <div itemprop="aggregateRating" itemscope="itemscope" itemtype="http://schema.org/AggregateRating">
+                <meta itemprop="bestRating" content="5">
+                <p><?php echo Mage::helper('ekomisnippets')->__('Rating') ?>
                     <span itemprop="ratingValue"><?php echo $_snippets['fb_avg']; ?></span>
                     <?php echo Mage::helper('ekomisnippets')->__('based on') ?>
                     <span itemprop="reviewCount"><?php echo $_snippets['fb_count']; ?></span>
                     <?php echo $this->getEkomiLink(); ?>
                 </p>
-			</div>
-		</div>
-	</div>	
+            </div>
+        </div>
+    </div>
 <?php } ?>

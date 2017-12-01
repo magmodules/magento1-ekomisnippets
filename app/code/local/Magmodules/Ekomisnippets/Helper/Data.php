@@ -31,15 +31,19 @@ class Magmodules_Ekomisnippets_Helper_Data extends Mage_Core_Helper_Abstract
         $ekomiVersion = 'cust-1.0.0';
 
         if ($ekomiApiId && $ekomiApiKey) {
-            $api = 'http://api.ekomi.de/v2/wsdl';
-            $client = new SoapClient($api, array('exceptions' => 0));
-            $sendSnapshotRequest = $client->getSnapshot($ekomiApiId . '|' . $ekomiApiKey, $ekomiVersion);
-            $ret = unserialize(utf8_decode($sendSnapshotRequest));
-            if ($ret['done']) {
-                $snippets = $ret['info'];
-                if ($snippets['fb_count'] > 0) {
-                    return $snippets;
+            try {
+                $api = 'http://api.ekomi.de/v2/wsdl';
+                $client = new SoapClient($api, array('exceptions' => 0));
+                $sendSnapshotRequest = $client->getSnapshot($ekomiApiId . '|' . $ekomiApiKey, $ekomiVersion);
+                $ret = @unserialize(utf8_decode($sendSnapshotRequest));
+                if ($ret['done']) {
+                    $snippets = $ret['info'];
+                    if ($snippets['fb_count'] > 0) {
+                        return $snippets;
+                    }
                 }
+            } catch (SoapFault $e){
+                Mage::logException($e);
             }
         }
         return false;
