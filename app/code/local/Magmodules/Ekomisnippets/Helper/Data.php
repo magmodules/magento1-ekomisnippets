@@ -32,9 +32,12 @@ class Magmodules_Ekomisnippets_Helper_Data extends Mage_Core_Helper_Abstract
 
         if ($ekomiApiId && $ekomiApiKey) {
             try {
-                $api = 'http://api.ekomi.de/v2/wsdl';
-                $client = new SoapClient($api, array('exceptions' => 0));
+                $defaultSocketTimeout = ini_get('default_socket_timeout');
+                ini_set('default_socket_timeout', 1);
+                $api = 'https://api.ekomi.de/v2/wsdl';
+                $client = new SoapClient($api, array('exceptions' => true, 'connection_timeout' => 1));
                 $sendSnapshotRequest = $client->getSnapshot($ekomiApiId . '|' . $ekomiApiKey, $ekomiVersion);
+                ini_set('default_socket_timeout', $defaultSocketTimeout);
                 $ret = @unserialize(utf8_decode($sendSnapshotRequest));
                 if ($ret['done']) {
                     $snippets = $ret['info'];
